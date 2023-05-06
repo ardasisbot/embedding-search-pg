@@ -9,7 +9,7 @@ import { Toaster, toast } from "react-hot-toast";
 // import Footer from "../components/Footer";
 
 import Header from "../components/Header";
-import Essay from './essay';
+import Essay from '../utils/essay';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -55,10 +55,10 @@ return (
     <Header />
     <div className="bg-white py-10 px-6 lg:px-14">
       <h1 className="text-3xl font-bold text-slate-900 text-center mb-4">
-        Search Paul Graham's articles. 
+        Search Paul Graham&apos;s articles. 
       </h1>
       <h2 className="text-1xl  text-slate-900 text-center mb-4">
-        Embedding-based similarity search on all of Paul Graham's articles. Details on GitHub.
+        Embedding-based similarity search on all of Paul Graham&apos;s articles. Details on GitHub.
 
       </h2>
       <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto space-y-8 ">

@@ -1,21 +1,20 @@
 'use client';
-import Image from 'next/image'
-import styles from './page.module.css'
-import type { NextPage } from "next";
-import Head from "next/head";
-import { useRef, useState } from "react";
-import { Toaster, toast } from "react-hot-toast";
-// import DropDown, { VibeType } from "../components/DropDown";
-// import Footer from "../components/Footer";
+// import Image from 'next/image'
+
+// import styles from '../styles/page.module.css'
+// import type { NextPage } from "next";
+// import Head from "next/head";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 import Header from "../components/Header";
-import Essay from './essay';
+import Essay from '../utils/essay';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [searchquery, setSearchQuery] = useState("");
   const [relevantEssays, setrelevantEssays] = useState<Essay[]>([]);
-  
+
   const lookupPassages = async (e: any) => {
     // will take a query and will perform a lookup 
     
@@ -47,7 +46,6 @@ export default function Home() {
       console.error(error);
       toast.error("An error occurred. Please try again later.");
   } 
-  
   setLoading(false);
 };
 return (
@@ -55,10 +53,10 @@ return (
     <Header />
     <div className="bg-white py-10 px-6 lg:px-14">
       <h1 className="text-3xl font-bold text-slate-900 text-center mb-4">
-        Search Paul Graham's articles. 
+        Search Paul Graham&apos;s articles. 
       </h1>
       <h2 className="text-1xl  text-slate-900 text-center mb-4">
-        Embedding-based similarity search on all of Paul Graham's articles. Details on GitHub.
+        Embedding-based similarity search on all of Paul Graham&apos;s articles. Details on GitHub.
 
       </h2>
       <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto space-y-8 ">

@@ -7,9 +7,9 @@ That's a mountful - here are the steps below.
 ### Scraping
 `misc/scraper/pg_scrape.py`
 
-1. Pull all article links from [here]("http://www.paulgraham.com/articles.html")
+1. Pull all article links from [here](http://www.paulgraham.com/articles.html)
 2. For each article, scrape the content
-3. Within each article, split the body into chunks and tokenize them via LangChain SpacyTextSplitter (worked best among the options) 
+3. Within each article, split the body into chunks and tokenize them via [LangChain SpacyTextSplitter](https://python.langchain.com/en/latest/modules/indexes/text_splitters/examples/spacy.html) (worked best among the options) 
 4. For each chunk, compute OpenAI embeddings 
 5. Seperately, go to Supabase and follow `misc/scraper/db.sql` to create db schema
 6. Store all essay metadata & embeddings in a Supabase DB with pgvector enabled

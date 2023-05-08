@@ -2,7 +2,7 @@ Embedding-based similarity search on [Paul Graham's essays](http://www.paulgraha
 
 https://user-images.githubusercontent.com/108202396/236718843-b1adf5f8-0858-4e7b-971f-4c00ed24d2e9.mov
 
-Repo contains: A python script to scrape all PG's essays, split/tokenize and put chunks into a Supabase DB, create embeddings via [LangChain](https://python.langchain.com/en/latest/index.html)/OpenAI, [pgvector](https://github.com/pgvector/pgvector) to compare embeddings, a (Supabase Edge function)[https://supabase.com/docs/guides/functions] to serve similar documents to given query and a Next.js frontend. 
+Repo contains: A python script to scrape all PG's essays, split/tokenize and put chunks into a Supabase DB, create embeddings via [LangChain](https://python.langchain.com/en/latest/index.html)/OpenAI, [pgvector](https://github.com/pgvector/pgvector) to compare embeddings, a [Supabase Edge function](https://supabase.com/docs/guides/functions) to serve similar documents to given query and a Next.js frontend. 
 
 That's a mouthful - here are the steps below. 
 

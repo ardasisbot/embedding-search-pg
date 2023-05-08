@@ -1,4 +1,4 @@
-Embedding-based similariy search on [Paul Graham's essays](http://www.paulgraham.com/articles.html). 
+Embedding-based similarity search on [Paul Graham's essays](http://www.paulgraham.com/articles.html). 
 
 https://user-images.githubusercontent.com/108202396/236718843-b1adf5f8-0858-4e7b-971f-4c00ed24d2e9.mov
 

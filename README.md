@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Embedding-based similariy search on [Paul Graham's essays](http://www.paulgraham.com/articles.html). 
 
-## Getting Started
+Repo contains: A python script to scrape all PG's essays, split/tokenize and put chunks into a Supabase DB, create embeddings via [LangChain](https://python.langchain.com/en/latest/index.html)/OpenAI, [pgvector](https://github.com/pgvector/pgvector) to compare embeddings, a (Supabase Edge function)[https://supabase.com/docs/guides/functions] to serve similar documents to given query and a Next.js frontend. 
 
-First, run the development server:
+That's a mountful - here are the steps below. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Scraping
+`misc/scraper/pg_scrape.py`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Pull all article links from [here]( "http://www.paulgraham.com/articles.html")
+2. For each article, scrape the content
+3. Within each article, split the body into chunks and tokenize them via LangChain SpacyTextSplitter (worked best among the options) 
+4. For each chunk, compute OpenAI embeddings 
+5. Seperately, go to Supabase and follow `misc/scraper/db.sql` to create db schema
+6. Store all essay metadata & embeddings in a Supabase DB with pgvector enabled
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## API: Search Query -> Relevant Documents
 
-To learn more about Next.js, take a look at the following resources:
+`misc/supabase/functions/embedsearch/index.ts`
+1. This is where we use a Supabase Edge Function (primarily for latency reasons)
+2. Given a search query, we compute its embedding (via OpenAI) and call our Supabase DB for similarity search.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Frontend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Next.js frontend with Tailwindcss for styling. 
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+

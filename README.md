@@ -1,5 +1,6 @@
 Embedding-based similariy search on [Paul Graham's essays](http://www.paulgraham.com/articles.html). 
-![pg_embedding_recording_480](https://user-images.githubusercontent.com/108202396/236718338-73baa6b8-ad00-4eda-b7fd-97ee86818dd7.gif)
+
+https://user-images.githubusercontent.com/108202396/236718399-84ca06d8-508f-4614-808e-614218e46024.mov
 
 Repo contains: A python script to scrape all PG's essays, split/tokenize and put chunks into a Supabase DB, create embeddings via [LangChain](https://python.langchain.com/en/latest/index.html)/OpenAI, [pgvector](https://github.com/pgvector/pgvector) to compare embeddings, a (Supabase Edge function)[https://supabase.com/docs/guides/functions] to serve similar documents to given query and a Next.js frontend. 
 

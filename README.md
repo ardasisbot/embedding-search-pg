@@ -7,7 +7,6 @@ That's a mountful - here are the steps below.
 ### Scraping
 `misc/scraper/pg_scrape.py`
 
-
 1. Pull all article links from [here]("http://www.paulgraham.com/articles.html")
 2. For each article, scrape the content
 3. Within each article, split the body into chunks and tokenize them via LangChain SpacyTextSplitter (worked best among the options) 

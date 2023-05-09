@@ -20,12 +20,12 @@ That's a mouthful - here are the steps below.
 ### API: Search Query -> Relevant Documents
 
 `misc/supabase/functions/embedsearch/index.ts`
-1. This is where we use a Supabase Edge Function (primarily for latency reasons)
-2. Given a search query, we compute its embedding (via OpenAI) and call our Supabase DB for similarity search.
+- This is where we use a Supabase Edge Function (primarily for latency reasons)
+- Given a search query, we compute its embedding (via OpenAI) and call our Supabase DB for similarity search.
 
 ### Frontend
 
-1. Next.js frontend with Tailwindcss for styling. 
+- Next.js frontend with Tailwindcss for styling. 
 
 
 

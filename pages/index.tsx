@@ -85,7 +85,7 @@ return (
           <>
             <div className="text-center">
               <h2 className="text-3xl font-bold text-slate-900">
-                Matching Results
+                Relevant Passages
               </h2>
             </div>
             <div className="mx-auto max-w-3xl space-y-8">

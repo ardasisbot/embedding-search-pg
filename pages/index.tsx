@@ -66,7 +66,9 @@ return (
               type="text"
               value={searchquery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-15 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-96 px-8 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500 italic"
+              placeholder="Enter a search term or a question"
+
             />
           </div>
           <div>

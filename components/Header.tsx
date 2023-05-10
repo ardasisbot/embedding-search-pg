@@ -12,6 +12,9 @@ const Header = () => {
           <a href="http://www.paulgraham.com/" className="hover:text-gray-300">Paul Graham Blog</a>
         </li>
         <li>
+          <a href="https://www.linkedin.com/in/ardasisbot/" className="hover:text-gray-300">Contact</a>
+        </li>
+        <li>
           <a
             className="flex items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100"
             href="https://github.com/ardasisbot/embedding-search-pg"

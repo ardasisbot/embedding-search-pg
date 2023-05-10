@@ -66,13 +66,15 @@ return (
               type="text"
               value={searchquery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="px-8 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-96 px-8 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500 italic"
+              placeholder="Enter a search term or a question"
+
             />
           </div>
           <div>
             <button
               type="submit"
-              className="px-8 py-2 bg-orange-400 text-black rounded-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-blue-500 border-2 border-black"
+              className="px-12 py-2 bg-orange-400 text-black rounded-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-blue-500 border-2 border-black"
               >
               Search
             </button>
@@ -85,7 +87,7 @@ return (
           <>
             <div className="text-center">
               <h2 className="text-3xl font-bold text-slate-900">
-                Matching Results
+                Relevant Passages
               </h2>
             </div>
             <div className="mx-auto max-w-3xl space-y-8">
